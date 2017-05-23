@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>doctorId</key>
+		<string>0</string>
+		<key>doctorName</key>
+		<string>Dr Matthew Franklin</string>
+		<key>doctorSpecialism</key>
+		<string>Cardiology</string>
+		<key>doctorSparkAddress</key>
+		<string>jonfiel@cisco.com</string>
+		<key>doctorImage</key>
+		<string>matthewFranklin</string>
+	</dict>
+	<dict>
+		<key>doctorId</key>
+		<string>1</string>
+		<key>doctorName</key>
+		<string>Dr Dylan Harvey</string>
+		<key>doctorSpecialism</key>
+		<string>General Practitioner</string>
+		<key>doctorSparkAddress</key>
+		<string>jonfiel@cisco.com</string>
+		<key>doctorImage</key>
+		<string>dylanHarvey</string>
+	</dict>
+	<dict>
+		<key>doctorId</key>
+		<string>2</string>
+		<key>doctorName</key>
+		<string>Dr Scarlett Carroll</string>
+		<key>doctorSpecialism</key>
+		<string>Oncology</string>
+		<key>doctorSparkAddress</key>
+		<string>jonfiel@cisco.com</string>
+		<key>doctorImage</key>
+		<string>scarlettCarroll</string>
+	</dict>
+	<dict>
+		<key>doctorId</key>
+		<string>3</string>
+		<key>doctorName</key>
+		<string>Dr Diana Allen</string>
+		<key>doctorSpecialism</key>
+		<string>Gastroenterology</string>
+		<key>doctorSparkAddress</key>
+		<string>jonfiel@cisco.com</string>
+		<key>doctorImage</key>
+		<string>dianaAllen</string>
+	</dict>
+	<dict>
+		<key>doctorId</key>
+		<string>4</string>
+		<key>doctorName</key>
+		<string>Dr Sheila Brooks
+</string>
+		<key>doctorSpecialism</key>
+		<string>Obstetrics</string>
+		<key>doctorSparkAddress</key>
+		<string>jonfiel@cisco.com</string>
+		<key>doctorImage</key>
+		<string>sheilaBrooks</string>
+	</dict>
+	<dict>
+		<key>doctorId</key>
+		<string>5</string>
+		<key>doctorName</key>
+		<string>Dr Savannah Peterson
+</string>
+		<key>doctorSpecialism</key>
+		<string>Podiatry</string>
+		<key>doctorSparkAddress</key>
+		<string>jonfiel@cisco.com</string>
+		<key>doctorImage</key>
+		<string>savannahPeterson
+</string>
+	</dict>
+	<dict>
+		<key>doctorId</key>
+		<string>6</string>
+		<key>doctorName</key>
+		<string>Dr Bradley Kim
+</string>
+		<key>doctorSpecialism</key>
+		<string>Pain Management</string>
+		<key>doctorSparkAddress</key>
+		<string>jonfiel@cisco.com</string>
+		<key>doctorImage</key>
+		<string>bradleyKim</string>
+	</dict>
+	<dict>
+		<key>doctorId</key>
+		<string>7</string>
+		<key>doctorName</key>
+		<string>Dr Wade Brewer</string>
+		<key>doctorSpecialism</key>
+		<string>Sports Medicine</string>
+		<key>doctorSparkAddress</key>
+		<string>jonfiel@cisco.com</string>
+		<key>doctorImage</key>
+		<string>wadeBrewer</string>
+	</dict>
+</array>
+</plist>

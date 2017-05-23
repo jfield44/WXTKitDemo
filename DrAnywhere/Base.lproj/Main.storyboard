@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1UE-Sl-T22">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginMenuViewController" customModule="DrAnywhere" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,9 +23,141 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="OWQ-6Q-rLG"/>
+                    <connections>
+                        <segue destination="Rij-pj-dgp" kind="show" identifier="toDoctorList" id="vVK-6D-gpf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2954.4000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Dr Anywhere-->
+        <scene sceneID="Pbc-wA-s4G">
+            <objects>
+                <tableViewController id="Rij-pj-dgp" customClass="DoctorListTableViewController" customModule="DrAnywhere" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="QVm-re-z8f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="150" id="o2o-Vs-S48">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o2o-Vs-S48" id="G0K-pC-DJ4">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drAnywhereLogoLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ulF-mN-6Zv">
+                                            <rect key="frame" x="56" y="15" width="262" height="69"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Demand Medical Professionals" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KAS-KO-VAD">
+                                            <rect key="frame" x="56" y="80" width="262" height="21"/>
+                                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KAS-KO-VAD" firstAttribute="top" secondItem="G0K-pC-DJ4" secondAttribute="topMargin" constant="72" id="D3p-C1-nsi"/>
+                                        <constraint firstItem="ulF-mN-6Zv" firstAttribute="leading" secondItem="KAS-KO-VAD" secondAttribute="leading" id="IVT-Zk-KiB"/>
+                                        <constraint firstItem="ulF-mN-6Zv" firstAttribute="top" secondItem="G0K-pC-DJ4" secondAttribute="topMargin" constant="7" id="fi0-ct-ova"/>
+                                        <constraint firstItem="ulF-mN-6Zv" firstAttribute="centerX" secondItem="G0K-pC-DJ4" secondAttribute="centerX" id="i0e-5T-fp8"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="KAS-KO-VAD" secondAttribute="bottom" constant="40.5" id="nUY-ib-B8C"/>
+                                        <constraint firstItem="ulF-mN-6Zv" firstAttribute="trailing" secondItem="KAS-KO-VAD" secondAttribute="trailing" id="sLn-rX-Kbq"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicalProfessionalCell" rowHeight="95" id="rue-KS-gJ5" customClass="MedicalProfessionalTableViewCell" customModule="DrAnywhere" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="178" width="375" height="95"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rue-KS-gJ5" id="KPX-k4-FZV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="95"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH1-qJ-C3Y">
+                                            <rect key="frame" x="101" y="37" width="200" height="21"/>
+                                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GE2-w2-f5a">
+                                            <rect key="frame" x="10" y="8" width="75" height="79"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="75" id="L3E-Cn-JyR"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWl-It-heP">
+                                            <rect key="frame" x="101" y="18" width="200" height="21"/>
+                                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zo8-LS-vWM">
+                                            <rect key="frame" x="325" y="29" width="42" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="42" id="anz-hD-vun"/>
+                                            </constraints>
+                                            <state key="normal" image="cameraIcon"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GE2-w2-f5a" firstAttribute="top" secondItem="KPX-k4-FZV" secondAttribute="topMargin" id="1ET-ye-4Sc"/>
+                                        <constraint firstItem="jWl-It-heP" firstAttribute="trailing" secondItem="bH1-qJ-C3Y" secondAttribute="trailing" id="KNW-7P-G2i"/>
+                                        <constraint firstItem="zo8-LS-vWM" firstAttribute="trailing" secondItem="KPX-k4-FZV" secondAttribute="trailingMargin" id="R2h-1R-xY5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="jWl-It-heP" secondAttribute="bottom" constant="47.5" id="X5U-LX-jId"/>
+                                        <constraint firstItem="bH1-qJ-C3Y" firstAttribute="top" secondItem="KPX-k4-FZV" secondAttribute="topMargin" constant="29" id="aau-0J-PrR"/>
+                                        <constraint firstItem="jWl-It-heP" firstAttribute="top" secondItem="KPX-k4-FZV" secondAttribute="topMargin" constant="10" id="acA-eR-xhR"/>
+                                        <constraint firstItem="GE2-w2-f5a" firstAttribute="centerY" secondItem="bH1-qJ-C3Y" secondAttribute="centerY" id="c1c-Pc-6In"/>
+                                        <constraint firstItem="zo8-LS-vWM" firstAttribute="leading" secondItem="jWl-It-heP" secondAttribute="trailing" constant="24" id="cXu-VJ-Ftj"/>
+                                        <constraint firstItem="bH1-qJ-C3Y" firstAttribute="centerY" secondItem="zo8-LS-vWM" secondAttribute="centerY" id="ex0-lL-lnJ"/>
+                                        <constraint firstItem="GE2-w2-f5a" firstAttribute="centerY" secondItem="KPX-k4-FZV" secondAttribute="centerY" id="jK6-SK-zqk"/>
+                                        <constraint firstItem="jWl-It-heP" firstAttribute="leading" secondItem="GE2-w2-f5a" secondAttribute="trailing" constant="16" id="lOz-C3-zbX"/>
+                                        <constraint firstItem="jWl-It-heP" firstAttribute="leading" secondItem="bH1-qJ-C3Y" secondAttribute="leading" id="p8I-pj-CeW"/>
+                                        <constraint firstItem="GE2-w2-f5a" firstAttribute="leading" secondItem="KPX-k4-FZV" secondAttribute="leadingMargin" constant="2" id="tnJ-iH-pfI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="doctorImage" destination="GE2-w2-f5a" id="AMp-G5-Uls"/>
+                                    <outlet property="doctorName" destination="jWl-It-heP" id="Xh1-9V-3Pr"/>
+                                    <outlet property="doctorSpecialism" destination="bH1-qJ-C3Y" id="CaT-f3-W9A"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rij-pj-dgp" id="mIw-im-o1i"/>
+                            <outlet property="delegate" destination="Rij-pj-dgp" id="3d2-bw-Y84"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Dr Anywhere" id="Ftn-hv-crN">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="done" id="NMe-K6-hlj"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="action" id="bfl-CY-ZaJ"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rak-XC-vCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4690.3999999999996" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OTP-tX-7nA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1UE-Sl-T22" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lMB-9s-560">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Aeg-xi-NQG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXM-vi-GZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015.2" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cameraIcon" width="42" height="37"/>
+        <image name="drAnywhereLogoLarge" width="262" height="69"/>
+    </resources>
 </document>
