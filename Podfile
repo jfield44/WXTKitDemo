@@ -8,4 +8,5 @@ target 'DrAnywhere' do
   # Pods for DrAnywhere
   pod "ILLoginKit"
   pod 'AABlurAlertController'
+  pod 'SparkSDK', '1.1'
 end
