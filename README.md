@@ -7,6 +7,15 @@ WXTKit is an unofficial convenience library written on top of the Cisco Webex Te
 
 This wrapper handles layout of the video streams for local and remote participants, the call setup process, in call functionality such as muting, and switching the camera as well as hanging up the call. An iMessage style Webex Teams powered Chat interface is also included. What that means is that you just need to pass WXTKit your Webex Teams authentication credentials and the address of the recipient and you will be all set. The wrapper is included in source form so you have total control over functionality and UX if you wish to change it.
 
+## Prerequisites
+Building iOS Apps requires a number of prerequisites in order to work correctly. In this case please ensure that your system meets the following requirements.
+* A Mac running the latest version of Mac OS X 10.13 High Sierra
+	- If you are unfamiliar with updating Mac OS X you can follow the instructions here [Update the software on your Mac - Apple Support](https://support.apple.com/en-us/HT201541)
+* The latest version of XCode downloaded and **installed** via the Mac App Store (at time of writing 9.4 or greater)
+* Cocoapods **installed** and **initial pod setup completed** (to do this, open your terminal and run the following commands):
+	* `sudo gem install cocoapods`
+	* `pod setup (can take 10-15 minutes sometimes)`
+
 
 ## Downloading the Sample Code ⬇️
 1. Open Terminal and Download or clone the **WXTKitDemo** repository
