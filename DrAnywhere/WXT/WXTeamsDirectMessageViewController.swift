@@ -171,30 +171,9 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
     
     override func didPressAccessoryButton(_ sender: UIButton!) {
         let actionView = UIAlertController.init(title: "N/A", message: "Not Implemented in Default Implementation", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        actionView.addAction(action1)
         present(actionView, animated: true, completion: nil)
-//        let vc = BSImagePickerViewController()
-//
-//        bs_presentImagePickerController(vc, animated: true, select: { (asset: PHAsset) -> Void in
-//            // User selected an asset.
-//            // Do something with it, start upload perhaps?
-//        }, deselect: { (asset: PHAsset) -> Void in
-//            // User deselected an assets.
-//            // Do something, cancel upload?
-//        }, cancel: { (assets: [PHAsset]) -> Void in
-//            // User cancelled. And this where the assets currently selected.
-//        }, finish: { (assets: [PHAsset]) -> Void in
-//            for asset in assets {
-//                print(asset.pixelHeight)
-//                self.getURL(asset: asset, completionHandler: { (url) in
-//                    print("URL------ \(url!.absoluteString)")
-//                    print("Filename------ \(url!.lastPathComponent)")
-//                    print("Recipient------ \(EmailAddress.fromString((self.recipient?.emails![0].toString())!)!)")
-//
-//                    self.sendMediaMessage(emailAddress: EmailAddress.fromString((self.recipient?.emails![0].toString())!)!, assetUrl: (url?.absoluteString)!, fileName: url!.lastPathComponent)
-//                })
-//            }
-//        }, completion: nil)
-        
     }
     
     func getURL(asset: PHAsset, completionHandler : @escaping ((_ responseURL : URL?) -> Void)){

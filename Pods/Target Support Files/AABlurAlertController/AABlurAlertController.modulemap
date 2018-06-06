@@ -1,6 +1,0 @@
-framework module AABlurAlertController {
-  umbrella header "AABlurAlertController-umbrella.h"
-
-  export *
-  module * { export * }
-}

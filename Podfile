@@ -6,7 +6,6 @@ target 'DrAnywhere' do
   use_frameworks!
 
   # Pods for DrAnywhere
-  pod "ILLoginKit"
-  pod 'AABlurAlertController'
-  pod 'SparkSDK', '1.1'
+  pod 'JSQMessagesViewController'
+  pod 'SparkSDK' , :git => 'https://github.com/ciscospark/spark-ios-sdk.git', :branch => 'EFT/1.4.0'
 end

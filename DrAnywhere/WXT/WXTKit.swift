@@ -69,7 +69,15 @@ class WXTKit: NSObject {
     
     //1-1 Message
     public func directMessage(navigationController: UINavigationController, recipient: String) {
-        let directMessageViewController = WXTeamsDirectMessageViewController(recipient: "jonfiel@cisco.com", incomingMessageBubbleColor: nil, outgoingMessageBubbleColor: nil, incomingMessageTextColor: nil, outgoingMessageTextColor: nil)
+        let directMessageViewController = WXTeamsDirectMessageViewController(recipient: recipient, incomingMessageBubbleColor: nil, outgoingMessageBubbleColor: nil, incomingMessageTextColor: nil, outgoingMessageTextColor: nil)
+        navigationController.present(directMessageViewController, animated: true) {
+            
+        }
+    }
+    
+    //1-1 Message
+    public func directMessage(navigationController: UINavigationController, recipient: String, incomingMessageBubbleColor: UIColor, outgoingMessageBubbleColor: UIColor, incomingMessageTextColor: UIColor, outgoingMessageTextColor: UIColor) {
+        let directMessageViewController = WXTeamsDirectMessageViewController(recipient: recipient, incomingMessageBubbleColor: incomingMessageBubbleColor, outgoingMessageBubbleColor: outgoingMessageBubbleColor, incomingMessageTextColor: incomingMessageTextColor, outgoingMessageTextColor: outgoingMessageTextColor)
         navigationController.present(directMessageViewController, animated: true) {
             
         }

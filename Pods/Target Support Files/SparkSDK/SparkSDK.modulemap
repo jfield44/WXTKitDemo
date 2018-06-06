@@ -1,0 +1,6 @@
+framework module SparkSDK {
+  umbrella header "SparkSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

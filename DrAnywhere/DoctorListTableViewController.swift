@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import AABlurAlertController
 
-class DoctorListTableViewController: UITableViewController {
+class DoctorListTableViewController: UITableViewController, WXTeamsCallingDelegate {
     
     let doctors = NSArray(contentsOf:Bundle.main.url(forResource: "doctors", withExtension: "plist")!)
 
@@ -58,20 +57,40 @@ class DoctorListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let doctor = self.doctors?.object(at: indexPath.row) as! NSDictionary
-        let vc = AABlurAlertController()
-        vc.addAction(action: AABlurAlertAction(title: "Cancel", style: AABlurActionStyle.cancel) { _ in
-            print("cancel")
-        })
-        vc.addAction(action: AABlurAlertAction(title: "Start", style: AABlurActionStyle.default) { _ in
-            print("start")
-        })
-        vc.blurEffectStyle = .light
-        vc.alertImage.image = UIImage(named: (doctor.value(forKey: "doctorImage") as? String)!)
-        vc.imageHeight = 110
-        vc.alertImage.layer.masksToBounds = true
-        vc.alertTitle.text = "Video Call"
-        vc.alertSubtitle.text = "Are you sure you wish to begin a remote consultation with \(doctor.value(forKey: "doctorName") as! String)?"
-        self.present(vc, animated: true, completion: nil)
+        
+        let alertController = UIAlertController(title: "Interact with \(doctor.value(forKey: "doctorName") as! String)", message: "Do you wish to start a Chat or a Video Call?", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "Chat", style: .default) { (action) in
+            print("Chat is pressed.....")
+            
+            /**
+                Complete Chat Functionality Here 💬
+            */
+           
+        }
+        let action2 = UIAlertAction(title: "Video Call", style: .default) { (action) in
+            print("Video Call is pressed......")
+            
+            /**
+                Complete Video Calling Functionality Here ☎️
+            */
+            
+        }
+        let action3 = UIAlertAction(title: "Cancel", style: .destructive) { (action) in
+            print("Cancel is pressed......")
+        }
+        alertController.addAction(action1)
+        alertController.addAction(action2)
+        alertController.addAction(action3)
+        self.present(alertController, animated: true, completion: nil)
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func callDidComplete() {
+        
+    }
+    
+    func callFailed(withError: String) {
+        
     }
     
 }

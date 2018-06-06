@@ -15,7 +15,7 @@ public class WXTManager: NSObject {
     
     //Enums
     public enum AuthenticationStrategy {
-        case sparkId, oAuth, guestId
+        case wxtId, oAuth, guestId
     }
     
     static let shared: WXTManager = WXTManager()
@@ -106,7 +106,7 @@ public class WXTManager: NSObject {
      - parameter apiKey: Spark Access Token from www.developer.ciscospark.com
      */
     func authenticateWithWXT(apiKey: String, authType: AuthenticationStrategy, authenticationState: @escaping (_ status: Bool ) -> Void){
-        if authType == .sparkId {
+        if authType == .wxtId {
             WXTManager.initSparkForSparkIdLogin(apiKey: apiKey)
             authenticationState(true)
         }
