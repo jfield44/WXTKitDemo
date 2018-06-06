@@ -36,7 +36,7 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
     
     public init(recipient: String, incomingMessageBubbleColor: UIColor?, outgoingMessageBubbleColor: UIColor?, incomingMessageTextColor: UIColor?, outgoingMessageTextColor: UIColor?) {
         self.recipient = nil
-        self.incomingMessageBubbleColor = incomingMessageTextColor
+        self.incomingMessageBubbleColor = incomingMessageBubbleColor
         self.outgoingMessageBubbleColor = outgoingMessageBubbleColor
         self.incomingMessageTextColor = incomingMessageTextColor
         self.outgoingMessageTextColor = outgoingMessageTextColor
