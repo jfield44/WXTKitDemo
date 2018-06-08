@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WXTeamsCallingViewController" customModule="SDKWrapperExample" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WXTeamsCallingViewController" customModule="DrAnywhere" customModuleProvider="target">
             <connections>
-                <outlet property="callTimerLabel" destination="AUa-9A-vhY" id="ILe-Gl-TUw"/>
-                <outlet property="hangupButton" destination="hiL-rf-svY" id="WUF-4p-FsG"/>
-                <outlet property="localMediaView" destination="57E-Q9-2da" id="N5C-Fg-nGj"/>
-                <outlet property="muteButton" destination="jd1-ww-mvz" id="y2E-A1-KoR"/>
-                <outlet property="remoteMediaView" destination="mdg-1o-faT" id="5P4-CP-g77"/>
-                <outlet property="rotateCameraButton" destination="9vS-7d-IIf" id="6hn-Jg-T1z"/>
+                <outlet property="callTimerLabel" destination="AUa-9A-vhY" id="ja0-UZ-8cc"/>
+                <outlet property="hangupButton" destination="hiL-rf-svY" id="ZbM-hz-w1c"/>
+                <outlet property="localMediaView" destination="57E-Q9-2da" id="AqC-pT-BQz"/>
+                <outlet property="muteButton" destination="jd1-ww-mvz" id="RBh-rI-v4X"/>
+                <outlet property="remoteMediaView" destination="mdg-1o-faT" id="2at-1M-wKt"/>
+                <outlet property="rotateCameraButton" destination="9vS-7d-IIf" id="sAR-y9-rnD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -54,7 +55,7 @@
                     </constraints>
                     <state key="normal" image="hangup"/>
                     <connections>
-                        <action selector="hangupPressed:" destination="-1" eventType="touchUpInside" id="P3V-lQ-XKP"/>
+                        <action selector="hangupPressed:" destination="-1" eventType="touchUpInside" id="Mn4-9b-ids"/>
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vS-7d-IIf">
@@ -64,7 +65,7 @@
                     </constraints>
                     <state key="normal" image="rotate"/>
                     <connections>
-                        <action selector="rotateCameraPressed:" destination="-1" eventType="touchUpInside" id="cCE-Bp-oGn"/>
+                        <action selector="rotateCameraPressed:" destination="-1" eventType="touchUpInside" id="VmX-ze-uyW"/>
                     </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jd1-ww-mvz">
@@ -75,7 +76,7 @@
                     </constraints>
                     <state key="normal" image="mute"/>
                     <connections>
-                        <action selector="mutePressed:" destination="-1" eventType="touchUpInside" id="FJD-gs-uHY"/>
+                        <action selector="mutePressed:" destination="-1" eventType="touchUpInside" id="g9g-Zg-Ycf"/>
                     </connections>
                 </button>
             </subviews>

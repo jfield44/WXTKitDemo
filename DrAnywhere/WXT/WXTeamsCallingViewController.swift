@@ -125,7 +125,7 @@ public protocol WXTeamsCallingDelegate: class {
     }
     
     func dial(address: String) {
-        WXTManager.shared.spark?.phone.dial(address, option: .audioVideo()) { [weak self] result in
+        WXTManager.shared.spark?.phone.dial(address, option: .audioVideo(local: self.localMediaView, remote: self.remoteMediaView)) { [weak self] result in
             if let strongSelf = self {
                 switch result {
                 case .success(let call):
