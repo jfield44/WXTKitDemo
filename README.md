@@ -1,7 +1,7 @@
 # Lab Guide	- Integrating Cisco Webex Teams into an Existing iOS Application
 This lab will show you the basics of how to implement Webex Teams powered Chat and Voice/Video Calling Capabilities into an existing App using the Cisco Webex Teams iOS SDK.
 
-In this lab you will be integrating Webex teams using a convenience library (WXTKit) which will take case of much of the heavy lifting for us. 
+In this lab you will be integrating Webex teams using a convenience library (WXTKit) which will take case of much of the heavy lifting for us.
 
 WXTKit is an unofficial convenience library written on top of the Cisco Webex Teams iOS SDK. The purpose of this project is provide a super simple way to add voice, video calling and chat into your app. This wrapper library provides a reference implementation of the Webex Teams SDK as a drop in component that you can add into your existing app to add voice and video capabilities without needing to know how to use the Webex Teams SDK.
 
@@ -20,13 +20,13 @@ Building iOS Apps requires a number of prerequisites in order to work correctly.
 ## Downloading the Sample Code ⬇️
 1. Open Terminal and Download or clone the **WXTKitDemo** repository
 	1. `git clone https://github.com/jfield44/WXTKitDemo.git`
-2. Change into the directory of the downloaded code 
+2. Change into the directory of the downloaded code
 	1. `cd WXTKitDemo`
 
 ## Getting the Sample App Up and Running 📱
 1. In the Terminal which is currently in the WXTKitDemo directory run the pod install command to install dependencies.
 	1. `pod install`
-2. Navigate the WXTKitDemo folder on your Mac in Finder and open the **DrAnywhere.xcworkspace** file.
+2. Navigate the WXTKitDemo folder on your Mac in Finder and open the **DrAnywhere.xcworkspace** file. **If you have not opened Xcode before, you will be prompted to enter your password to enable developer mode on the Mac, if you do not get the popup then no action is required.**
 3. This will have opened Xcode (the tool iOS developers use to build apps). To run the sample app, click the **Play** button in the top left corner. If the Play button is greyed out, you will need to select a device from the dropdown to the right of it (suggested to use an iPhone 8 or 8 Plus). This will launch the iOS Simulator
 4. Once the Simulator is loaded, you will see a list of Medical Professionals, click one one and it you will be presented with the option to start a Chat session or a Video Call. Currently these buttons are not connected to the Webex Teams SDK. In the next steps new we enhance this app with capability to Chat and Video call.
 
@@ -35,14 +35,14 @@ As this is a lab targeted at beginners some of the implementation has been done 
 
 **The Messaging SDK that we are using is currently in a beta state and as such the first message that you sent from the Sample App will not render in the Webex Teams client (it will show a space but not the message), you will need to reply to the SDK user from the Webex Teams client once and then it will function as normal.**
 
-1. In Xcode on the left hand side you will see a list of files (if you do not see a list of files you may need to open the file structure by clicking on the disclosure triangle). 
+1. In Xcode on the left hand side you will see a list of files (if you do not see a list of files you may need to open the file structure by clicking on the disclosure triangle).
 	1. Click on file `DoctorListTableViewController.swift`
-2. This file contains of the code that built the GUI that you used when you pressed on the Doctor and it displayed the options to either Chat or Video Call. To implement Chat we need to add some code into the function which is called when we press the Chat button in the GUI. 
+2. This file contains of the code that built the GUI that you used when you pressed on the Doctor and it displayed the options to either Chat or Video Call. To implement Chat we need to add some code into the function which is called when we press the Chat button in the GUI.
 	1. Locate the text inside **DoctorListTableViewController.swift** that says `Complete Chat Functionality Here 💬`
 3. You will see that there are some comments surrounding `/** (above) */ (below)` the Complete Chat functionality text.
-	1. Add a new line underneath the final comment `*/` 
-4. Now we will copy in some code which will trigger the Chat session to run when the the Chat option is selected from the menu. 
-	1. 1. On the new line that you just created, copy and paste this code block 
+	1. Add a new line underneath the final comment `*/`
+4. Now we will copy in some code which will trigger the Chat session to run when the the Chat option is selected from the menu.
+	1. 1. On the new line that you just created, copy and paste this code block
 ```
 	let wxt = WXTKit(apiKey: "YOUR_API_KEY_HERE", authType: .wxtId)
             wxt.activate(authenticationStatus: { (authenticated) in
@@ -52,8 +52,8 @@ As this is a lab targeted at beginners some of the implementation has been done 
             })
 ```
 
-5. In order to use the WXT SDK you need to provide some credentials for authentication. In production this would either be an OAuth or a Guest token but for testing we will use a Developer Token/API Key. You can get this from developer.webex.com or from your lab instructor. 
-	1. 1. Update the code where it currently says `YOUR_API_KEY_HERE` with your API Key/Token. (Make sure that you **keep** the `“”` that surround the API Key. So yours will look something like below) 
+5. In order to use the WXT SDK you need to provide some credentials for authentication. In production this would either be an OAuth or a Guest token but for testing we will use a Developer Token/API Key. You can get this from developer.webex.com or from your lab instructor.
+	1. 1. Update the code where it currently says `YOUR_API_KEY_HERE` with your API Key/Token. (Make sure that you **keep** the `“”` that surround the API Key. So yours will look something like below)
 ```
 	let wxt = WXTKit(apiKey: "ABC123YZ456", authType: .wxtId)
 ```
@@ -70,9 +70,9 @@ As this is a lab targeted at beginners some of the implementation has been done 
 To implement Video Calling, we will perform a similar process as before.
 
 1. Locate the text in the **DoctorListTableViewController** that says `Complete Video Calling Functionality Here ☎️`.
-	1. Like in the previous project add a new line under the closing `*/` 
+	1. Like in the previous project add a new line under the closing `*/`
 2. Copy and paste the following code block onto the new line
-	1. 
+	1.
 ```
 	let wxt = WXTKit(apiKey: "YOUR_API_KEY_HERE", authType: .wxtId)
             wxt.activate(authenticationStatus: { (authenticated) in
