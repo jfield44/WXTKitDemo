@@ -62,6 +62,10 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.title = self.senderDisplayName
     }
+    
+    override func viewWillLayoutSubviews() {
+        collectionView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -223,5 +227,9 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
 }

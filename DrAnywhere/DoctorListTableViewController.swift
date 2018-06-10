@@ -93,4 +93,8 @@ class DoctorListTableViewController: UITableViewController, WXTeamsCallingDelega
         
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
 }

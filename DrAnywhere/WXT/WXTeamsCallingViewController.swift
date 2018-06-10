@@ -321,4 +321,8 @@ public protocol WXTeamsCallingDelegate: class {
         return formattedTimeString
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
 }
