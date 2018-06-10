@@ -1,4 +1,7 @@
 # Lab Guide	- Integrating Cisco Webex Teams into an Existing iOS Application
+
+![](DrAnywhere.png)
+
 This lab will show you the basics of how to implement Webex Teams powered Chat and Voice/Video Calling Capabilities into an existing App using the Cisco Webex Teams iOS SDK.
 
 In this lab you will be integrating Webex teams using a convenience library (WXTKit) which will take case of much of the heavy lifting for us.
