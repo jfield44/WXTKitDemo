@@ -64,7 +64,10 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
     }
     
     override func viewWillLayoutSubviews() {
-        collectionView.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        WXTManager.shared.deinitSpark()
     }
 
     override func didReceiveMemoryWarning() {
@@ -170,6 +173,7 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
             print("PERSON IS-> \(response.result)")
             let retrievedPerson: Person = response.result.data![0]
             self.recipient = retrievedPerson
+            self.navigationItem.title = self.recipient?.displayName
         })
     }
     
@@ -227,9 +231,5 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
 
 }

@@ -92,9 +92,5 @@ class DoctorListTableViewController: UITableViewController, WXTeamsCallingDelega
     func callFailed(withError: String) {
         
     }
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
+
 }
