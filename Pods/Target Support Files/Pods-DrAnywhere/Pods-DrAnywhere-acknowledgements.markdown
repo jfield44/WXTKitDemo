@@ -138,7 +138,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## SparkSDK
 
-Except the "Wme.framework" licensed under Cisco EULA 
+Except the "Wme.framework", "Sbu.framework", "Seu.framework" licensed under Cisco EULA 
 (https://www.cisco.com/c/en/us/products/end-user-license-agreement.html), 
 everything else is licensed under MIT License below.
 

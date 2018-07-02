@@ -144,11 +144,16 @@ public class LocalFile {
     ///
     /// - since: 1.4.0
     public class Thumbnail {
-        let path: String
-        let width: Int
-        let height: Int
-        let size: UInt64
-        let mime: String
+        /// The local path of the file's thumbnail.
+        public let path: String
+        /// The width of the file's thumbnail.
+        public let width: Int
+        /// The height of the file's thumbnail.
+        public let height: Int
+        /// The size of the file's thumbnail.
+        public let size: UInt64
+        /// The path type of the file's thumbnail.
+        public let mime: String
         
         /// LocalFile thumbnail constructor.
         ///
@@ -170,13 +175,18 @@ public class LocalFile {
             self.size = size
         }
     }
-    
-    let path: String
-    let name: String
-    let mime: String
-    let size: UInt64
-    let progressHandler: ((Double) -> Void)?
-    let thumbnail: Thumbnail?
+    /// The local path of the file.
+    public let path: String
+    /// The name of the file.
+    public let name: String
+    /// The mime type of the file.
+    public let mime: String
+    /// The size of the file.
+    public let size: UInt64
+    /// The progressHandler when uploading the file.
+    public let progressHandler: ((Double) -> Void)?
+    /// The thumbnail of the file.
+    public let thumbnail: Thumbnail?
     
     /// LocalFile constructor.
     ///

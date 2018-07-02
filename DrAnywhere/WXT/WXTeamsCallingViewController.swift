@@ -147,6 +147,7 @@ public protocol WXTeamsCallingDelegate: class {
                     //Callback when this *call* is disconnected (hangup, cancelled, get declined or other self device pickup the call).
                     call.onDisconnected = {[weak self] disconnectionType in
                         if let strongSelf = self {
+                            self?.hideLoadingScreen()
                             WXTManager.shared.deinitSpark()
                             self?.delegate?.callDidComplete()
                             self?.dismiss(animated: true, completion: nil)

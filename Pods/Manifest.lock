@@ -1,13 +1,13 @@
 PODS:
   - Alamofire (4.7.2)
-  - AlamofireObjectMapper (5.0.0):
+  - AlamofireObjectMapper (5.1.0):
     - Alamofire (~> 4.1)
-    - ObjectMapper (~> 3.0)
+    - ObjectMapper (~> 3.3)
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
   - KeychainAccess (3.1.1)
-  - ObjectMapper (3.1.0)
+  - ObjectMapper (3.3.0)
   - SparkSDK (1.4.0):
     - Alamofire (~> 4.7.1)
     - AlamofireObjectMapper (~> 5.0)
@@ -20,40 +20,31 @@ PODS:
 
 DEPENDENCIES:
   - JSQMessagesViewController
-  - SparkSDK (from `https://github.com/ciscospark/spark-ios-sdk.git`, branch `EFT/1.4.0`)
+  - SparkSDK (~> 1.4.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireObjectMapper
     - JSQMessagesViewController
     - JSQSystemSoundPlayer
     - KeychainAccess
     - ObjectMapper
+    - SparkSDK
     - Starscream
     - SwiftyJSON
 
-EXTERNAL SOURCES:
-  SparkSDK:
-    :branch: EFT/1.4.0
-    :git: https://github.com/ciscospark/spark-ios-sdk.git
-
-CHECKOUT OPTIONS:
-  SparkSDK:
-    :commit: cd95e9f16d874895837af66abb862adf7764804c
-    :git: https://github.com/ciscospark/spark-ios-sdk.git
-
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  AlamofireObjectMapper: 3395e698901d8b0e6f48b7d0c43bd47875325102
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
-  SparkSDK: 57c7cfe5b899cc8dcf3ef369dc86a99afbc9f13b
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  SparkSDK: 3220327445e0a6f0a113298e24f85ef40ec3ad4c
   Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: 7043ed4205061df3cfab06950a5b6f1e2ad63265
+PODFILE CHECKSUM: a309fa72ea609dfe4a5db5ef7a1e12d25d76a50c
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

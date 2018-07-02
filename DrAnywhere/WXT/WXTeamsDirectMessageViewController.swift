@@ -112,7 +112,7 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
         }
         DispatchQueue.global(qos: .background).async {
             
-            WXTManager.shared.spark?.messages.post(personEmail: EmailAddress.fromString((self.recipient?.emails![0].toString())!)!, text: text!, mentions: nil, files: nil, queue: nil, completionHandler: { (response) in
+            WXTManager.shared.spark?.messages.post(personEmail: EmailAddress.fromString((self.recipient?.emails![0].toString())!)!, text: text!, files: [], queue: nil, completionHandler: { (response) in
                 DispatchQueue.main.async {
                     self.finishSendingMessage()
                     JSQSystemSoundPlayer.jsq_playMessageSentSound()

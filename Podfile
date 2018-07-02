@@ -7,5 +7,5 @@ target 'DrAnywhere' do
 
   # Pods for DrAnywhere
   pod 'JSQMessagesViewController'
-  pod 'SparkSDK' , :git => 'https://github.com/ciscospark/spark-ios-sdk.git', :branch => 'EFT/1.4.0'
+  pod 'SparkSDK' , '~> 1.4.0'
 end
