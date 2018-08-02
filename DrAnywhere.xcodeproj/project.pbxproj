@@ -14,6 +14,10 @@
 		3418784F1ED07B64000ECBC8 /* DoctorListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3418784E1ED07B64000ECBC8 /* DoctorListTableViewController.swift */; };
 		341878511ED1C497000ECBC8 /* doctors.plist in Resources */ = {isa = PBXBuildFile; fileRef = 341878501ED1C497000ECBC8 /* doctors.plist */; };
 		341878531ED1C8E1000ECBC8 /* MedicalProfessionalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341878521ED1C8E1000ECBC8 /* MedicalProfessionalTableViewCell.swift */; };
+		34A0B18C21108A6A003DB6A8 /* WXTeamsImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0B18A21108A6A003DB6A8 /* WXTeamsImageViewController.swift */; };
+		34A0B18D21108A6A003DB6A8 /* WXTeamsImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A0B18B21108A6A003DB6A8 /* WXTeamsImageViewController.xib */; };
+		34A0B1902111B9FD003DB6A8 /* WXTeamsDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A0B18E2111B9FD003DB6A8 /* WXTeamsDocumentViewController.swift */; };
+		34A0B1912111B9FD003DB6A8 /* WXTeamsDocumentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 34A0B18F2111B9FD003DB6A8 /* WXTeamsDocumentViewController.xib */; };
 		34E9C2DB20C69EC700F61A83 /* ALLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9C2D420C69EC500F61A83 /* ALLoadingView.swift */; };
 		34E9C2DC20C69EC700F61A83 /* WXTeamsCallingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9C2D520C69EC500F61A83 /* WXTeamsCallingViewController.swift */; };
 		34E9C2DD20C69EC700F61A83 /* WXTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E9C2D620C69EC600F61A83 /* WXTManager.swift */; };
@@ -35,6 +39,10 @@
 		3418784E1ED07B64000ECBC8 /* DoctorListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorListTableViewController.swift; sourceTree = "<group>"; };
 		341878501ED1C497000ECBC8 /* doctors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = doctors.plist; sourceTree = "<group>"; };
 		341878521ED1C8E1000ECBC8 /* MedicalProfessionalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicalProfessionalTableViewCell.swift; sourceTree = "<group>"; };
+		34A0B18A21108A6A003DB6A8 /* WXTeamsImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXTeamsImageViewController.swift; sourceTree = "<group>"; };
+		34A0B18B21108A6A003DB6A8 /* WXTeamsImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WXTeamsImageViewController.xib; sourceTree = "<group>"; };
+		34A0B18E2111B9FD003DB6A8 /* WXTeamsDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXTeamsDocumentViewController.swift; sourceTree = "<group>"; };
+		34A0B18F2111B9FD003DB6A8 /* WXTeamsDocumentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WXTeamsDocumentViewController.xib; sourceTree = "<group>"; };
 		34E9C2D420C69EC500F61A83 /* ALLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALLoadingView.swift; sourceTree = "<group>"; };
 		34E9C2D520C69EC500F61A83 /* WXTeamsCallingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXTeamsCallingViewController.swift; sourceTree = "<group>"; };
 		34E9C2D620C69EC600F61A83 /* WXTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXTManager.swift; sourceTree = "<group>"; };
@@ -108,6 +116,10 @@
 				34E9C2D520C69EC500F61A83 /* WXTeamsCallingViewController.swift */,
 				34E9C2D720C69EC600F61A83 /* WXTeamsCallingViewController.xib */,
 				34E9C2D820C69EC600F61A83 /* WXTeamsDirectMessageViewController.swift */,
+				34A0B18A21108A6A003DB6A8 /* WXTeamsImageViewController.swift */,
+				34A0B18B21108A6A003DB6A8 /* WXTeamsImageViewController.xib */,
+				34A0B18E2111B9FD003DB6A8 /* WXTeamsDocumentViewController.swift */,
+				34A0B18F2111B9FD003DB6A8 /* WXTeamsDocumentViewController.xib */,
 				34E9C2DA20C69EC700F61A83 /* WXTKit.swift */,
 				34E9C2D620C69EC600F61A83 /* WXTManager.swift */,
 			);
@@ -186,8 +198,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				34E9C2DE20C69EC700F61A83 /* WXTeamsCallingViewController.xib in Resources */,
+				34A0B18D21108A6A003DB6A8 /* WXTeamsImageViewController.xib in Resources */,
 				341878431ED05E61000ECBC8 /* LaunchScreen.storyboard in Resources */,
 				341878511ED1C497000ECBC8 /* doctors.plist in Resources */,
+				34A0B1912111B9FD003DB6A8 /* WXTeamsDocumentViewController.xib in Resources */,
 				341878401ED05E61000ECBC8 /* Assets.xcassets in Resources */,
 				3418783E1ED05E61000ECBC8 /* Main.storyboard in Resources */,
 			);
@@ -267,7 +281,9 @@
 				34E9C2DB20C69EC700F61A83 /* ALLoadingView.swift in Sources */,
 				341878531ED1C8E1000ECBC8 /* MedicalProfessionalTableViewCell.swift in Sources */,
 				34E9C2DF20C69EC700F61A83 /* WXTeamsDirectMessageViewController.swift in Sources */,
+				34A0B1902111B9FD003DB6A8 /* WXTeamsDocumentViewController.swift in Sources */,
 				3418784F1ED07B64000ECBC8 /* DoctorListTableViewController.swift in Sources */,
+				34A0B18C21108A6A003DB6A8 /* WXTeamsImageViewController.swift in Sources */,
 				341878391ED05E61000ECBC8 /* AppDelegate.swift in Sources */,
 				34E9C2DD20C69EC700F61A83 /* WXTManager.swift in Sources */,
 			);
@@ -397,6 +413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WX8RQ75DFU;
 				INFOPLIST_FILE = DrAnywhere/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cisco.DrAnywhere;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -411,6 +428,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WX8RQ75DFU;
 				INFOPLIST_FILE = DrAnywhere/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cisco.DrAnywhere;
 				PRODUCT_NAME = "$(TARGET_NAME)";

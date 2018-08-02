@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WXTeamsImageViewController" customModule="DrAnywhere" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="StS-Jh-lg7" id="E03-tV-V54"/>
+                <outlet property="scrollView" destination="ZCk-Fw-80V" id="dhH-76-RVC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCk-Fw-80V">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="StS-Jh-lg7">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="667" id="WeR-Py-gzV"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="StS-Jh-lg7" firstAttribute="centerX" secondItem="ZCk-Fw-80V" secondAttribute="centerX" id="ABf-X2-Tio"/>
+                        <constraint firstItem="StS-Jh-lg7" firstAttribute="leading" secondItem="ZCk-Fw-80V" secondAttribute="leading" id="B40-pl-Gfy"/>
+                        <constraint firstAttribute="trailing" secondItem="StS-Jh-lg7" secondAttribute="trailing" id="EwY-Ry-m3B"/>
+                        <constraint firstAttribute="bottom" secondItem="StS-Jh-lg7" secondAttribute="bottom" id="PTQ-7O-CVW"/>
+                        <constraint firstItem="StS-Jh-lg7" firstAttribute="top" secondItem="ZCk-Fw-80V" secondAttribute="top" id="ech-WL-7s2"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZCk-Fw-80V" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5Cc-9p-YsR"/>
+                <constraint firstItem="ZCk-Fw-80V" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="EgT-j7-N2C"/>
+                <constraint firstItem="ZCk-Fw-80V" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="aXa-g0-rjg"/>
+                <constraint firstAttribute="trailing" secondItem="ZCk-Fw-80V" secondAttribute="trailing" id="q8H-cl-h6E"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="81.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

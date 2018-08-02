@@ -11,6 +11,7 @@ import JSQMessagesViewController
 import SparkSDK
 import Photos
 import PhotosUI
+import AVKit
 
 class WXTeamsDirectMessageViewController: JSQMessagesViewController {
     
@@ -21,6 +22,7 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
     public var outgoingMessageTextColor: UIColor?
     
     fileprivate var messages = [JSQMessage]()
+    fileprivate var attachments = [String: URL]()
     fileprivate lazy var outgoingBubbleImageView: JSQMessagesBubbleImage = self.setupOutgoingBubble()
     fileprivate lazy var incomingBubbleImageView: JSQMessagesBubbleImage = self.setupIncomingBubble()
     
@@ -77,13 +79,39 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
     
     fileprivate func registerForIncomingMessages() {
         print("Registering for Inbound Messages")
-        
         WXTManager.shared.spark?.messages.onEvent = { messageEvent in
             switch messageEvent{
             case .messageReceived(let message):
                 print("------ PERSON-ID: \(message.personId!) \n\n RECIPIENT-ID \(self.recipient!.id!)")
                 if message.personId! == self.recipient!.id! {
-                    self.updateMessageActivity(message)
+                    
+                    if message.files == nil {
+                        self.updateMessageActivity(message)
+                    }
+                    else {
+                        for file in message.files! {
+                            
+                            WXTManager.shared.spark?.messages.downloadFile(file, completionHandler: { (result) in
+                                
+                                let fileExtension = NSURL(fileURLWithPath: (result.data?.absoluteString)!).pathExtension
+                                print("Extension is \(fileExtension)!")
+                                
+                                if (fileExtension == "mp4") {
+                                    let video = JSQVideoMediaItem(fileURL: result.data?.absoluteURL, isReadyToPlay: true)
+                                    self.addVideoMessage(withId: message.personEmail!, name: "Agent", key: file.displayName!, mediaItem: video!)
+                                }
+                                else if (fileExtension == "pdf" || fileExtension == "doc" || fileExtension == "xls" || fileExtension == "ppt" || fileExtension == "docx" || fileExtension == "xlsx" || fileExtension == "pptx") {
+                                    self.attachments["📄 Document: \(file.displayName!)"] = result.data?.absoluteURL
+                                    self.addAttachment(withId: message.personEmail!, name: "Agent", text: "📄 Attachment: \(file.displayName!)")
+                                }
+                                else {
+                                    let image = UIImage(data: NSData(contentsOf: (result.data?.absoluteURL)!)! as Data)
+                                    self.addPhotoMessage(withId: message.personEmail!, name: "Agent", key: file.displayName!, mediaItem: JSQPhotoMediaItem(image: image))
+                                }
+                                self.finishReceivingMessage(animated: true)
+                            })
+                        }
+                    }
                 }
                 break
             case .messageDeleted(let messageId):
@@ -103,6 +131,30 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
         if let message = JSQMessage(senderId: id, displayName: name, text: text) {
             messages.append(message)
             finishSendingMessage(animated: true)
+        }
+    }
+    
+    private func addPhotoMessage(withId id: String, name: String, key: String, mediaItem: JSQPhotoMediaItem) {
+        if let message = JSQMessage(senderId: id, displayName: name, media: mediaItem) {
+            messages.append(message)
+            collectionView.reloadData()
+        }
+        self.finishReceivingMessage(animated: true)
+    }
+    
+    private func addVideoMessage(withId id: String, name: String, key: String, mediaItem: JSQVideoMediaItem) {
+        
+        if let message = JSQMessage(senderId: id, displayName: name, media: mediaItem) {
+            messages.append(message)
+            collectionView.reloadData()
+        }
+        self.finishReceivingMessage(animated: true)
+    }
+    
+    private func addAttachment(withId id: String, name: String, text: String) {
+        if let message = JSQMessage(senderId: id, displayName: name, text: text) {
+            messages.append(message)
+            finishReceivingMessage(animated: true)
         }
     }
     
@@ -231,5 +283,50 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+
+    
+    
+    
+    override func collectionView(_ collectionView: JSQMessagesCollectionView!, didTapMessageBubbleAt indexPath: IndexPath!) {
+        print("tapped at \(indexPath)")
+        let message =  self.messages[indexPath.row]
+        if message.isMediaMessage == true{
+            let mediaItem =  message.media
+            if mediaItem is JSQPhotoMediaItem {
+                let photoItem = mediaItem as! JSQPhotoMediaItem
+                let imageViewVC = WXTeamsImageViewController()
+                let navController = UINavigationController(rootViewController: imageViewVC)
+                imageViewVC.fileName = "Attachment"
+                imageViewVC.attachmentImage = photoItem.image!
+                self.present(navController, animated: true, completion: nil)
+            }
+            else if mediaItem is JSQVideoMediaItem {
+                let video = message.media as! JSQVideoMediaItem
+                let videoURL = video.fileURL
+                self.playVideo(fileUrl: videoURL!)
+            }
+        }
+        else if message.text.contains("Attachment:") {
+            print(message.text!)
+            let fileUrl = self.attachments[message.text] as! URL
+            print(fileUrl)
+            let attachmentViewVC = WXTeamsDocumentViewController()
+            let navController = UINavigationController(rootViewController: attachmentViewVC)
+            attachmentViewVC.attachmentURI = fileUrl
+            self.present(navController, animated: true, completion: nil)
+        }
+    }
+    
+    func playVideo(fileUrl: URL)
+    {
+        let player = AVPlayer(url: fileUrl)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true)
+        {
+            player.play()
+        }
+    }
 
 }

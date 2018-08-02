@@ -38,6 +38,8 @@
 	<string>Camera</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Microphone</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Photos</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
