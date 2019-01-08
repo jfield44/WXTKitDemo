@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SparkSDK
+import WebexSDK
 
 ///*Spark* object is the entry point to use this Cisco Spark iOS SDK
 ///This app simplely use one Spark instance to demo all the SDK function.
@@ -19,7 +19,7 @@ public class WXTManager: NSObject {
     }
     
     static let shared: WXTManager = WXTManager()
-    var spark: Spark?
+    var webex: Webex?
     ///Authorized user
     var selfInfo :Person?
     ///The recent active call
@@ -39,7 +39,7 @@ public class WXTManager: NSObject {
     
     /// - note: When the user log out,you must delloc the spark to release the memory.
     func deinitSpark() {
-        guard spark != nil else {
+        guard webex != nil else {
             return
         }
         
@@ -50,12 +50,12 @@ public class WXTManager: NSObject {
         // Removes this *phone* from Cisco Spark cloud on behalf of the authenticated user.
         // It also disconnects the websocket from Cisco Spark cloud.
         // Subsequent invocations of this method behave as a no-op.
-        spark!.phone.deregister() { ret in
+        webex!.phone.deregister() { ret in
             // Deauthorizes the current user and clears any persistent state with regards to the current user.
             // If the *phone* is registered, it should be deregistered before calling this method.
-            self.spark?.authenticator.deauthorize()
+            self.webex?.authenticator.deauthorize()
             self.selfInfo = nil
-            self.spark = nil
+            self.webex = nil
         }
         
     }
@@ -70,7 +70,7 @@ public class WXTManager: NSObject {
     /// Log in with Spark ID helper function
     static func initSparkForSparkIdLogin(apiKey: String) {
         let authenticator = WXSimpleTokenAuthenticator(accessToken: apiKey)
-        WXTManager.shared.spark = Spark(authenticator: authenticator)
+        WXTManager.shared.webex = Webex(authenticator: authenticator)
 //        SparkContext.sharedInstance.spark = Spark(authenticator: SparkContext.getOAuthStrategy())
 //        Register a console logger into SDK
 //        SparkContext.sharedInstance.spark?.logger = KSLogger()
@@ -86,7 +86,7 @@ public class WXTManager: NSObject {
         if jwtAuthStrategy.authorized == true {
             print("JWT Authorised")
             /* JWT Login success process codes here....*/
-            WXTManager.shared.spark = Spark(authenticator: jwtAuthStrategy)
+            WXTManager.shared.webex = Webex(authenticator: jwtAuthStrategy)
         } else {
             /* JWT Login failure process codes here....*/
             print("JWT Login Error")
@@ -94,7 +94,7 @@ public class WXTManager: NSObject {
     }
     
     static func activeUser(completion: @escaping (_ person: Person) -> Void) {
-        WXTManager.shared.spark?.people.getMe(completionHandler: { (person) in
+        WXTManager.shared.webex?.people.getMe(completionHandler: { (person) in
             print("In the loop")
             print("ME \(person.result)")
            completion(person.result.data!)
@@ -114,16 +114,16 @@ public class WXTManager: NSObject {
             WXTManager.initSparkForJWTLogin(apiKey: apiKey)
             authenticationState(true)
         }
-        WXTManager.shared.spark?.phone.disableVideoCodecActivation()
+        WXTManager.shared.webex?.phone.disableVideoCodecActivation()
     }
     
     /**
-     Register this instance of the Media SDK with the Spark Cloud for Outgoing Calls
-     - parameter successfulRegistration: Triggered if the instance of the Media SDK was registered with the Spark Cloud successfully
-     - parameter unSuccessfulRegistration: Triggered if the instance of the Media SDK was unable to register with the Spark Cloud
+     Register this instance of the Media SDK with the Webex Cloud for Outgoing Calls
+     - parameter successfulRegistration: Triggered if the instance of the Media SDK was registered with the Webex Cloud successfully
+     - parameter unSuccessfulRegistration: Triggered if the instance of the Media SDK was unable to register with the Webex Cloud
      */
     func registerDeviceWithWXT(deviceRegistrationState: @escaping (_ registered: Bool ) -> Void){
-                self.spark?.phone.register() { error in
+                self.webex?.phone.register() { error in
                     if (error == nil) {
                         print("Device Registered")
                         deviceRegistrationState(true)

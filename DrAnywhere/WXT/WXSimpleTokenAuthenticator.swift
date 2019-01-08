@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SparkSDK
+import WebexSDK
 
 class WXSimpleTokenAuthenticator: Authenticator {
     

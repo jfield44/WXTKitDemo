@@ -8,7 +8,7 @@
 
 import UIKit
 import JSQMessagesViewController
-import SparkSDK
+import WebexSDK
 import Photos
 import PhotosUI
 import AVKit
@@ -79,7 +79,7 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
     
     fileprivate func registerForIncomingMessages() {
         print("Registering for Inbound Messages")
-        WXTManager.shared.spark?.messages.onEvent = { messageEvent in
+        WXTManager.shared.webex?.messages.onEvent = { messageEvent in
             switch messageEvent{
             case .messageReceived(let message):
                 print("------ PERSON-ID: \(message.personId!) \n\n RECIPIENT-ID \(self.recipient!.id!)")
@@ -91,7 +91,7 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
                     else {
                         for file in message.files! {
                             
-                            WXTManager.shared.spark?.messages.downloadFile(file, completionHandler: { (result) in
+                            WXTManager.shared.webex?.messages.downloadFile(file, completionHandler: { (result) in
                                 
                                 let fileExtension = NSURL(fileURLWithPath: (result.data?.absoluteString)!).pathExtension
                                 print("Extension is \(fileExtension)!")
@@ -164,7 +164,7 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
         }
         DispatchQueue.global(qos: .background).async {
             
-            WXTManager.shared.spark?.messages.post(personEmail: EmailAddress.fromString((self.recipient?.emails![0].toString())!)!, text: text!, files: [], queue: nil, completionHandler: { (response) in
+            WXTManager.shared.webex?.messages.post(personEmail: EmailAddress.fromString((self.recipient?.emails![0].toString())!)!, text: text!, files: [], queue: nil, completionHandler: { (response) in
                 DispatchQueue.main.async {
                     self.finishSendingMessage()
                     JSQSystemSoundPlayer.jsq_playMessageSentSound()
@@ -221,7 +221,7 @@ class WXTeamsDirectMessageViewController: JSQMessagesViewController {
     }
     
     func personFromEmailAddress(emailAddress: String) {
-        WXTManager.shared.spark?.people.list(email: EmailAddress.fromString(emailAddress), displayName: nil, id: nil, orgId: nil, max: nil, queue: nil, completionHandler: { (response) in
+        WXTManager.shared.webex?.people.list(email: EmailAddress.fromString(emailAddress), displayName: nil, id: nil, orgId: nil, max: nil, queue: nil, completionHandler: { (response) in
             print("PERSON IS-> \(response.result)")
             let retrievedPerson: Person = response.result.data![0]
             self.recipient = retrievedPerson

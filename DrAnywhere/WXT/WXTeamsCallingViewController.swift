@@ -27,7 +27,7 @@
 //
 
 import UIKit
-import SparkSDK
+import WebexSDK
 import AVFoundation
 
 /**
@@ -110,12 +110,12 @@ public protocol WXTeamsCallingDelegate: class {
         else {
             // Its a Group Call
             print("Group Call")
-            WXTManager.shared.spark?.rooms.create(title: "SDK Call", completionHandler: { (response: ServiceResponse) in
+            WXTManager.shared.webex?.spaces.create(title: "SDK Call", completionHandler: { (response: ServiceResponse) in
                 print("In the Loop")
                 recipientAddressOrRoomId = response.result.data?.id!
                 print("RoomID: \(recipientAddressOrRoomId!)")
                 for recipientAddress in recipients {
-                    WXTManager.shared.spark?.memberships.create(roomId: (response.result.data?.id)!, personEmail: EmailAddress.fromString(recipientAddress)!, completionHandler: { (membershipResponse) in
+                    WXTManager.shared.webex?.memberships.create(spaceId: (response.result.data?.id)!, personEmail: EmailAddress.fromString(recipientAddress)!, completionHandler: { (membershipResponse) in
                         print(membershipResponse.result.data!)
                     })
                 }
@@ -125,7 +125,7 @@ public protocol WXTeamsCallingDelegate: class {
     }
     
     func dial(address: String) {
-        WXTManager.shared.spark?.phone.dial(address, option: .audioVideo(local: self.localMediaView, remote: self.remoteMediaView)) { [weak self] result in
+        WXTManager.shared.webex?.phone.dial(address, option: .audioVideo(local: self.localMediaView, remote: self.remoteMediaView)) { [weak self] result in
             if let strongSelf = self {
                 switch result {
                 case .success(let call):
@@ -202,7 +202,7 @@ public protocol WXTeamsCallingDelegate: class {
      */
     func startWXTCall(recipients: [String], mediaAccessType: MediaAccessType){
         self.startCallTimer()
-        WXTManager.shared.spark?.phone.defaultFacingMode = .user
+        WXTManager.shared.webex?.phone.defaultFacingMode = .user
         self.showLoadingScreen(recipient: "Calling")
         self.initiateCall(recipients: recipients)
     }

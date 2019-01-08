@@ -1,26 +1,26 @@
 PODS:
-  - Alamofire (4.7.2)
-  - AlamofireObjectMapper (5.1.0):
-    - Alamofire (~> 4.1)
-    - ObjectMapper (~> 3.3)
+  - Alamofire (4.7.1)
+  - AlamofireObjectMapper (5.2.0):
+    - Alamofire (~> 4.7)
+    - ObjectMapper (~> 3.4)
   - JSQMessagesViewController (7.3.5):
     - JSQSystemSoundPlayer (~> 2.0.1)
   - JSQSystemSoundPlayer (2.0.1)
-  - KeychainAccess (3.1.1)
-  - ObjectMapper (3.3.0)
-  - SparkSDK (1.4.0):
-    - Alamofire (~> 4.7.1)
-    - AlamofireObjectMapper (~> 5.0)
-    - KeychainAccess (~> 3.1)
-    - ObjectMapper (~> 3.1)
-    - Starscream (~> 3.0.5)
-    - SwiftyJSON (~> 4.0)
+  - KeychainAccess (3.1.2)
+  - ObjectMapper (3.4.2)
   - Starscream (3.0.5)
-  - SwiftyJSON (4.1.0)
+  - SwiftyJSON (4.2.0)
+  - WebexSDK (2.0.0):
+    - Alamofire (= 4.7.1)
+    - AlamofireObjectMapper (~> 5.1)
+    - KeychainAccess (~> 3.1)
+    - ObjectMapper (~> 3.3)
+    - Starscream (= 3.0.5)
+    - SwiftyJSON (~> 4.1)
 
 DEPENDENCIES:
   - JSQMessagesViewController
-  - SparkSDK (~> 1.4.0)
+  - WebexSDK (~> 2.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -30,21 +30,21 @@ SPEC REPOS:
     - JSQSystemSoundPlayer
     - KeychainAccess
     - ObjectMapper
-    - SparkSDK
     - Starscream
     - SwiftyJSON
+    - WebexSDK
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
-  AlamofireObjectMapper: 3395e698901d8b0e6f48b7d0c43bd47875325102
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  AlamofireObjectMapper: 92b6ce2423a9d159e686f6a1d514a009bf903ddc
   JSQMessagesViewController: 6587f56aedbcb150a8ba1d968e1ef58b1bc758b7
   JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
-  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
-  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
-  SparkSDK: 3220327445e0a6f0a113298e24f85ef40ec3ad4c
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
   Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
-  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  WebexSDK: 038cc03089b7544308bd2a99cf55635677667cbd
 
-PODFILE CHECKSUM: a309fa72ea609dfe4a5db5ef7a1e12d25d76a50c
+PODFILE CHECKSUM: 19f9cbf2c8e5bd6b10f1512409fb94bac24240ef
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1

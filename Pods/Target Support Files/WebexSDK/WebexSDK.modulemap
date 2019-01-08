@@ -1,0 +1,6 @@
+framework module WebexSDK {
+  umbrella header "WebexSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}

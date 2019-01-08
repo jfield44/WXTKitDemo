@@ -7,5 +7,5 @@ target 'DrAnywhere' do
 
   # Pods for DrAnywhere
   pod 'JSQMessagesViewController'
-  pod 'SparkSDK' , '~> 1.4.0'
+  pod 'WebexSDK' , '~> 2.0.0'
 end

@@ -39,17 +39,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SparkSDK.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Starscream.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>WebexSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
