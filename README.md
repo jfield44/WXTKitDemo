@@ -12,9 +12,9 @@ This wrapper handles layout of the video streams for local and remote participan
 
 ## Prerequisites
 Building iOS Apps requires a number of prerequisites in order to work correctly. In this case please ensure that your system meets the following requirements.
-* A Mac running the latest version of Mac OS X 10.13 High Sierra
+* A Mac running the latest version of Mac OS X 10.14 Mojave
 	- If you are unfamiliar with updating Mac OS X you can follow the instructions here [Update the software on your Mac - Apple Support](https://support.apple.com/en-us/HT201541)
-* The latest version of XCode downloaded and **installed** via the Mac App Store (at time of writing 9.4 or greater)
+* The latest version of XCode downloaded and **installed** via the Mac App Store (at time of writing 10.1 or greater)
 * Cocoapods **installed** and **initial pod setup completed** (to do this, open your terminal and run the following commands):
 	* `sudo gem install cocoapods`
 	* `pod setup (can take 10-15 minutes sometimes)`
@@ -35,8 +35,6 @@ Building iOS Apps requires a number of prerequisites in order to work correctly.
 
 ## Implementing Chat using WXTKit 💬
 As this is a lab targeted at beginners some of the implementation has been done for you already but we still need to implement a number of functions in order to enable Video Calling and Chat.
-
-**The Messaging SDK that we are using is currently in a beta state and as such the first message that you sent from the Sample App will not render in the Webex Teams client (it will show a space but not the message), you will need to reply to the SDK user from the Webex Teams client once and then it will function as normal.**
 
 1. In Xcode on the left hand side you will see a list of files (if you do not see a list of files you may need to open the file structure by clicking on the disclosure triangle).
 	1. Click on file `DoctorListTableViewController.swift`
